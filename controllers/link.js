@@ -18,7 +18,7 @@ router.post('/', (req, res) => {
       upload_date: req.body.upload_date
     }).then(place => {
       res.redirect('/links')
-    })
+    }).catch(err => res.send('Validation Error. All fields are required'))
 })
 router.get('/new', (req, res) => {
   var a = new Date()

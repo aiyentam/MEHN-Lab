@@ -1,9 +1,9 @@
 const mongoose = require('../db/connection')
 const LinkSchema = new mongoose.Schema({
-  url: String,
-  title: String,
-  description: String,
-  upload_date: String
+  url: { type: String, required: true},
+  title: { type: String, required: true},
+  description: { type: String, required: true},
+  upload_date: { type: String, required: true}
 })
 
 const Link = mongoose.model('Link', LinkSchema)
