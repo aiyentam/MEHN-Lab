@@ -20,8 +20,10 @@ router.post('/', (req, res) => {
         res.redirect('/links')
       })
 })
-router.get('/new', (req, res) => {
-    res.render('links/new')
+router.get('/new', (req, res) => {  
+    var a = new Date ()
+    var b = a.toDateString()
+    res.render('links/new', {b})
   })
 
 router.get('/edit/:id', (req, res) => {

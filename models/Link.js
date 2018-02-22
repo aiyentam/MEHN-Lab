@@ -3,7 +3,7 @@ const LinkSchema = new mongoose.Schema({
     url: String,
     title: String,
     description: String,
-    upload_date: Number
+    upload_date: String
 });
 
 const Link = mongoose.model("Link", LinkSchema);
