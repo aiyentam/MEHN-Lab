@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost/hacker_links');
+mongoose.connect('mongodb://localhost/hacker_links')
 
-mongoose.Promise = Promise;
+mongoose.Promise = Promise
 
 module.exports = mongoose

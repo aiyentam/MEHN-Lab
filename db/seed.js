@@ -1,9 +1,9 @@
-const Link = require('../models/Link');
-const data = require('./seeds.json');
+const Link = require('../models/Link')
+const data = require('./seeds.json')
 
 Link.remove({}).then(() => {
-    return Link.collection.insert(data);
+  return Link.collection.insert(data)
 })
 .then(() => {
-    process.exit();
+  process.exit()
 })
