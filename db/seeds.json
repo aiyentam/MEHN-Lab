@@ -1,0 +1,20 @@
+[
+    {
+        "url": "www.reddit.com/hacker_news",
+        "title": "HAK3R N3WS",
+        "description": "Wanna be a hacker? Read more here!",
+        "upload_date": 20180222 
+    },
+    {
+        "url": "www.reddit.com/coding",
+        "title": "Coder",
+        "description": "Learn to Code!",
+        "upload_date": 20180219 
+    },
+    {
+        "url": "www.reddit.com/caffinefix",
+        "title": "Coffee Is LIFE",
+        "description": "Coffee, Coffee, Tea!",
+        "upload_date": 20180218
+    }
+]
