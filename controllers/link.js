@@ -21,7 +21,9 @@ router.post('/', (req, res) => {
       })
 })
 router.get('/new', (req, res) => {
-    res.render('links/new')
+    var a = new Date()
+    var b = a.toDateString()
+    res.render('links/new', {b})
   })
 
 router.get('/edit/:id', (req, res) => {
