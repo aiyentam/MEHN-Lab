@@ -1,5 +1,8 @@
 const express = require('express')
 const router = express.Router()
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
+const passport = require("passport");
 
 const Link = require('../models/Link')
 
@@ -20,6 +23,7 @@ router.post('/', (req, res) => {
       res.redirect('/links')
     }).catch(err => res.send('Validation Error. All fields are required'))
 })
+
 router.get('/new', (req, res) => {
   var a = new Date()
   var b = a.toDateString()
@@ -31,12 +35,14 @@ router.get('/edit/:id', (req, res) => {
       res.render('links/edit', link)
     })
 })
+
 router.put('/:id', (req, res) => {
   Link.findOneAndUpdate({ _id: req.params.id}, req.body, {new: true})
     .then(link => {
       res.redirect('/links')
     })
 })
+
 router.delete('/:id', (req, res) => {
   Link.findOneAndRemove({ _id: req.params.id }).then(() => {
       res.redirect('/links')
