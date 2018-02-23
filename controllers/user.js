@@ -1,8 +1,8 @@
-var express = require('express');
-var router = express.Router();
-var bodyParser = require('body-parser');
-var methodOverride = require('method-override');
-var passport = require("passport");
+var express = require('express')
+var router = express.Router()
+var bodyParser = require('body-parser')
+var methodOverride = require('method-override')
+var passport = require('passport')
 
 // GET /
 router.get('/', (req, res) => {
@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 
 // GET /signup
 router.get('/signup', (req, res) => {
-  res.render('signup', {message: req.flash('signupMessage')}) 
+  res.render('signup', {message: req.flash('signupMessage')})
 })
 
 // POST /signup
@@ -20,8 +20,8 @@ router.post('/signup', (req, res) => {
     successRedirect: '/',
     failureRedirect: '/signup',
     failureFlash: true
-  });
-  return signupStrategy(req, res);
+  })
+  return signupStrategy(req, res)
 })
 
 // GET /login
@@ -45,10 +45,10 @@ router.get('/logout', (req, res) => {
   res.redirect('/')
 })
 
-// Restricted (cool people only!)
-router.get('/secret', (req, res) => {
-  if(req.isAuthenicated()) res.render('secret')
-  res.redirect('/')
-})
+// // Secret?
+// router.get('/link', (req, res) => {
+//   if (req.isAuthenticated()) res.render('secret')
+//   res.redirect('/')
+// })
 
 module.exports = router

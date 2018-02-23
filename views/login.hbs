@@ -1,0 +1,20 @@
+<h2>Login</h2>
+
+{{#if message}}
+  <div>{{message}}</div>
+  <img src="http://s2.quickmeme.com/img/2f/2f25848bbb6727a7567e061e6d11cf0f0218b7f91adda6a2b741048d3bdbc0e5.jpg"/>
+{{/if}}
+
+<form method="post" action="/login">
+  <div>
+    <label for="email">Email</label>
+    <input type="text" name="email" id="email">
+  </div>
+
+  <div>
+    <label for="email">Password</label>
+    <input type="password" name="password" id="password">
+  </div>
+
+  <input type="submit">
+</form>

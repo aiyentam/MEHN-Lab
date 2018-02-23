@@ -1,19 +1,19 @@
-const express = require('express');
-const hbs = require('hbs');
+const express = require('express')
+const hbs = require('hbs')
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const flash = require('connect-flash')
 const session = require('express-session')
 const passport = require('passport')
 
-const app = express();
+const app = express()
 
 const hackerController = require('./controllers/link')
 const userController = require('./controllers/user')
 
-app.set("view engine", "hbs");
+app.set('view engine', 'hbs')
 app.use(bodyParser.urlencoded({extended: true}))
-app.use(methodOverride("_method"));
+app.use(methodOverride('_method'))
 
 app.use(session({secret: 'WDI-GENERAL-ASSEMBLY-EXPRESS'}))
 app.use(flash())
@@ -22,18 +22,17 @@ require('./config/passport')(passport)
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.use(function(req, res, next) {
-    res.locals.currentUser = req.user
-    next()
+app.use(function (req, res, next) {
+  res.locals.currentUser = req.user
+  next()
 })
 
 app.get('/', (req, res) => {
-    res.render('index')
-});
+  res.render('index')
+})
 
-app.use('/links', hackerController);
-app.use('/', userController);
+app.use('/links', hackerController)
+app.use('/', userController)
 
-console.log(userController)
 
-app.listen(8080, () => console.log('test'));
+app.listen(8080, () => console.log('test'))
