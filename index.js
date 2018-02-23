@@ -15,7 +15,7 @@ app.set('view engine', 'hbs')
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
 
-app.use(session({secret: 'WDI-GENERAL-ASSEMBLY-EXPRESS'}))
+app.use(session({secret: 'idk'}))
 app.use(flash())
 
 require('./config/passport')(passport)
@@ -33,6 +33,5 @@ app.get('/', (req, res) => {
 
 app.use('/links', hackerController)
 app.use('/', userController)
-
 
 app.listen(8080, () => console.log('test'))

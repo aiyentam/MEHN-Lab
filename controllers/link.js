@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const bodyParser = require('body-parser');
-const methodOverride = require('method-override');
-const passport = require("passport");
+const bodyParser = require('body-parser')
+const methodOverride = require('method-override')
+const passport = require('passport')
 
 const Link = require('../models/Link')
 
@@ -15,13 +15,13 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   Link.create({
-      url: req.body.url,
-      title: req.body.title,
-      description: req.body.description,
-      upload_date: req.body.upload_date
-    }).then(place => {
-      res.redirect('/links')
-    }).catch(err => res.send('Validation Error. All fields are required'))
+    url: req.body.url,
+    title: req.body.title,
+    description: req.body.description,
+    upload_date: req.body.upload_date
+  }).then(place => {
+    res.redirect('/links')
+  }).catch(err => res.send('Validation Error. All fields are required'))
 })
 
 router.get('/new', (req, res) => {
@@ -32,8 +32,8 @@ router.get('/new', (req, res) => {
 
 router.get('/edit/:id', (req, res) => {
   Link.findOne({_id: req.params.id}).then(link => {
-      res.render('links/edit', link)
-    })
+    res.render('links/edit', link)
+  })
 })
 
 router.put('/:id', (req, res) => {
@@ -45,8 +45,8 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   Link.findOneAndRemove({ _id: req.params.id }).then(() => {
-      res.redirect('/links')
-    })
+    res.redirect('/links')
+  })
 })
 
 router.get('/:id', (req, res) => {
